@@ -1,0 +1,49 @@
+{
+  "name": "SuperJupiterStoreForward",
+  "version": "0.1.0",
+  "description": "Acknowledged bounded upload queue with explicit retry timing and record identities. Portable C++11 by SuperJupiter. Hardware validation pending.",
+  "keywords": [
+    "sensor",
+    "embedded",
+    "esp32",
+    "arduino",
+    "store-forward"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Super-Jupiter/superjupiter-store-forward.git"
+  },
+  "homepage": "https://github.com/Super-Jupiter/superjupiter-store-forward",
+  "authors": [
+    {
+      "name": "SuperJupiter",
+      "url": "https://www.superjupiter.net",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*",
+  "headers": [
+    "SuperJupiterStoreForward.h"
+  ],
+  "export": {
+    "include": [
+      "src/*",
+      "examples/*",
+      "docs/*",
+      "tests/*",
+      "tools/*",
+      "README.md",
+      "LICENSE",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "SECURITY.md",
+      "CMakeLists.txt",
+      "library.json",
+      "library.properties",
+      "cmake/*",
+      "extras/*"
+    ]
+  }
+}
