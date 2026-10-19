@@ -2,7 +2,7 @@
 
 Acknowledged bounded upload queue with explicit retry timing and record identities.
 
-**Version 0.1.0: evolving preview. Hardware validation pending.**
+**Version 0.1.1: evolving preview. Hardware validation pending.**
 
 Original MIT-licensed portable C++11 by [SuperJupiter](https://www.superjupiter.net).
 No mandatory service, hidden clock reads, network calls or heap allocation in the core.
@@ -21,10 +21,10 @@ No automatic retry of an uncertain non-idempotent operation. Single task only or
 PlatformIO exact release (after registry publication):
 
 ```ini
-lib_deps = superjupiter/SuperJupiterStoreForward@0.1.0
+lib_deps = superjupiter/SuperJupiterStoreForward@0.1.1
 ```
 
-Arduino: use the versioned [GitHub release ZIP](https://github.com/Super-Jupiter/superjupiter-store-forward/releases/tag/v0.1.0).
+Arduino: use the versioned [GitHub release ZIP](https://github.com/Super-Jupiter/superjupiter-store-forward/releases/tag/v0.1.1).
 Library Manager registration and index propagation are separate steps; check the official index before relying on IDE availability.
 
 ## Example
@@ -58,17 +58,17 @@ Top-level CMake builds tests/examples; a subproject does not enable developer to
 
 ## Documentation and verification
 
-- [API and boundaries](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.0/docs/API.md)
-- [Tests](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.0/tests/test.cpp)
-- [Validation status](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.0/docs/VALIDATION.md)
-- [Shared conventions](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.0/docs/CONVENTIONS.md)
-- [Migration policy](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.0/docs/MIGRATION.md)
+- [API and boundaries](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.1/docs/API.md)
+- [Tests](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.1/tests/test.cpp)
+- [Validation status](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.1/docs/VALIDATION.md)
+- [Shared conventions](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.1/docs/CONVENTIONS.md)
+- [Migration policy](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.1/docs/MIGRATION.md)
 
 ```sh
 cmake -S . -B build/cmake
 cmake --build build/cmake
 ctest --test-dir build/cmake --output-on-failure
-python3 tools/check_release.py --tag v0.1.0
+python3 tools/check_release.py --tag v0.1.1
 ```
 
 Keep raw observations and their provenance in your application. Derived results are not physical truth.
@@ -85,3 +85,11 @@ Each component can be used independently. Domain models, customer data and propr
 
 MIT. Report reproducible bugs through repository issues; private security reports: info@superjupiter.net.
 Include version, configuration, inputs, expected and observed behaviour. No credentials or private customer data.
+
+
+## Compatibility review 0.1.1
+
+This patch includes independent regression tests and a reviewed [interoperability contract](https://github.com/Super-Jupiter/superjupiter-store-forward/blob/v0.1.1/docs/INTEROPERABILITY.md). Hardware validation pending.
+
+- Removed unused duplicated math helpers and unnecessary includes.
+- Overflow-safe ring indexing; documented payload construction and persistent ID responsibilities.

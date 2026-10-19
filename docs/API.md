@@ -33,3 +33,11 @@ The [public header](https://github.com/Super-Jupiter/superjupiter-store-forward/
 All time arguments are caller supplied. No method is thread-safe without caller synchronisation.
 Non-success result fields must only be used where this contract explicitly defines them.
 Memory is bounded by template capacities and local arrays; storage/network adapter implementations may have their own costs.
+
+
+## 0.1.1 review clarifications
+
+See [INTEROPERABILITY.md](INTEROPERABILITY.md) for units, timestamp horizons, numeric validity, payload constraints and storage synchronisation.
+
+- Removed unused duplicated math helpers and unnecessary includes.
+- Overflow-safe ring indexing; documented payload construction and persistent ID responsibilities.

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(SuperJupiterStoreForward VERSION 0.1.0 LANGUAGES CXX)
+project(SuperJupiterStoreForward VERSION 0.1.1 LANGUAGES CXX)
 
 set(_superjupiter_store_forward_top_level OFF)
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
@@ -19,6 +19,9 @@ target_compile_features(SuperJupiterStoreForward INTERFACE cxx_std_11)
 
 if(SUPERJUPITER_STORE_FORWARD_BUILD_TESTS)
   enable_testing()
+  add_executable(superjupiter-store-forward-review tests/review_regressions.cpp)
+  target_link_libraries(superjupiter-store-forward-review PRIVATE SuperJupiter::StoreForward)
+  add_test(NAME superjupiter-store-forward-review COMMAND superjupiter-store-forward-review)
   add_executable(superjupiter-store-forward-tests tests/test.cpp)
   target_link_libraries(superjupiter-store-forward-tests PRIVATE SuperJupiter::StoreForward)
   add_test(NAME superjupiter-store-forward-tests COMMAND superjupiter-store-forward-tests)
